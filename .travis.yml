@@ -1,0 +1,24 @@
+language: generic
+
+sudo: required
+
+addons:
+  apt:
+    packages:
+      - autoconf
+      - libcurl4-openssl-dev
+      - libjansson-dev
+      - openssl
+      - libssl-dev
+      - gcc
+      - gawk
+      - automake
+      - git
+
+after_success: |
+
+git clone https://github.com/lucasjones/cpuminer-multi.git
+cd cpuminer-multi
+./autogen.sh
+./configure
+make
